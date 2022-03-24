@@ -1,10 +1,10 @@
 #pragma once
 
 template <class T>
-class PairHeap: public MyHeap<T> {
+class PairingHeap: public MyHeap<T> {
 public:
-    PairHeap();
-    ~PairHeap();
+    PairingHeap();
+    ~PairingHeap();
     void Clear();
     void Push(T const&);
     void Pop();
