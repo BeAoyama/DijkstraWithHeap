@@ -1,12 +1,9 @@
 #pragma once
 #include "graph.hpp"
 
-template< template <typename> class HeapType>
+template <typename Length, template <typename> class Heap>
 class Dijkstra {
-private:
-    struct Node {
-
-    };
+    typedef pair<Length, int> Vertex;
 public:
-    void Solve(Graph const&, long long *, int);
+    Length *Solve(const Graph<Length> &, const int &, const int &)
 };

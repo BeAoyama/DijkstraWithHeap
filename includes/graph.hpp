@@ -2,7 +2,8 @@
 #include <iostream>
 #include <cstdio>
 
-void Graph::Clear() {
+template <typename Length>
+void Graph<Length>::Clear() {
     for(int i = 1; i <= n; ++ i) {
         for(Eptr e = G[i], nxt = NULL; e; e = nxt) {
             nxt = e->nxt;
@@ -13,7 +14,8 @@ void Graph::Clear() {
     G = NULL;
 }
 
-void Graph::AddEdge(int x, int y, int w) {
+template <typename Length>
+void Graph<Length>::AddEdge(int x, int y, Length w) {
     Eptr ne = new Edge;
     ne->x = x;
     ne->y = y;
@@ -22,7 +24,8 @@ void Graph::AddEdge(int x, int y, int w) {
     G[x] = ne;
 }
 
-void Graph::InputFromKeyboard() {
+template <typename Length>
+void Graph<Length>::InputFromKeyboard() {
     scanf("%d%d", &n, &m);
     G = new Eptr[n + 1];
     for(int i = 0, x, y, w; i < m; ++ i) {
@@ -31,7 +34,8 @@ void Graph::InputFromKeyboard() {
     }
 }
 
-void Graph::InputFromFile() {
+template <typename Length>
+void Graph<Length>::InputFromFile() {
     scanf("%d%d", &n, &m);
     G = new Eptr[n + 1];
     for(int i = 0, x, y, w; i < m; ++ i) {
